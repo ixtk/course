@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1rem;
+  font-family: sans-serif;
+}
+
+.emp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
