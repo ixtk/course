@@ -1,0 +1,17 @@
+[
+  {
+    "value": "do homework",
+    "isChecked": true,
+    "id": "3b1e2779-0cf0-4672-a07a-57b95b3ff43b"
+  },
+  {
+    "value": "watch a movie",
+    "isChecked": false,
+    "id": "052ffba4-e8d6-469d-8fc7-392537b65122"
+  },
+  {
+    "value": "make bed",
+    "isChecked": false,
+    "id": "ea17065c-1bc7-4b2a-8fc0-066c7cdeffd5"
+  }
+]

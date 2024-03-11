@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+button,
+textarea {
+  font: inherit;
+  width: 100%;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  max-width: 300px;
+}
+
+button[type="submit"] {
+  margin-top: 8px;
+  width: auto;
+  align-self: flex-end;
+}
+
+.tag-list {
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  list-style: none;
+}
+
+.tag-list button {
+  cursor: pointer;
+  list-style: none;
+  border: none;
+  background: rgb(61, 106, 188);
+  padding: 2px 8px;
+  border-radius: 500px;
+  color: white;
+}

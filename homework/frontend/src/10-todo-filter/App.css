@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+.todo-completed {
+  text-decoration: line-through;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.todo-text {
+  margin-right: 16px;
+}
+
+.active {
+  background-color: cornflowerblue;
+  color: white;
+}

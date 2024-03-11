@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+input,
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+.container {
+  padding: 32px 16px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+form {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.theme-container {
+  margin-bottom: 32px;
+}
+
+label span {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+label span {
+  display: block;
+  margin-bottom: 2px;
+}
+
+form input[type="text"],
+form select {
+  width: 100%;
+}
+
+.sound-container label {
+  display: flex;
+  align-items: center;
+}
+
+.sound-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+select {
+  padding: 3px 0;
+}
+
+.auto-save {
+  margin-top: 16px;
+}
+
+.sound-indicator {
+  margin-right: 0;
+  font-size: 1.3rem;
+}
+
+button {
+  text-transform: uppercase;
+  background: rgb(168, 0, 168);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 0;
+}
+
+.lives {
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+}
+
+div > h2 {
+  color: rgb(168, 0, 168);
+}
+
+.autosave {
+  color: green;
+  margin-top: 5px;
+  font-size: smaller;
+}
