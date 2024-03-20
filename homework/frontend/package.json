@@ -11,6 +11,7 @@
     "serve-wiki": "json-server ./src/16-wiki-refactor/data.json"
   },
   "dependencies": {
+    "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "clsx": "^2.1.0",
     "formik": "^2.4.5",
