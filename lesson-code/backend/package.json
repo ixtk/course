@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon storage.js"
+    "dev": "nodemon relationships.js"
   },
   "author": "",
   "license": "ISC",
