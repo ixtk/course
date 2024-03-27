@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
   username: String,
   // or, address: addressSchema
   address: {
-    street: { type: String },
+    street: String,
     city: String
   }
 })
@@ -56,6 +56,21 @@ const bookSchema = new mongoose.Schema({
 const Publisher = mongoose.model("Publisher", publisherSchema)
 const Book = mongoose.model("Book", bookSchema)
 
+// REFERENCING: MANY-TO-MANY
+
+const categorySchema = new mongoose.Schema({
+  name: { type: String, required: true }
+})
+
+const productSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  price: { type: Number, required: true },
+  categories: [{ type: mongoose.Schema.Types.ObjectId, ref: "Category" }]
+})
+
+const Category = mongoose.model("Category", categorySchema)
+const Product = mongoose.model("Product", productSchema)
+
 const app = express()
 
 app.use(express.json())
@@ -82,7 +97,21 @@ app.post("/users", async (req, res) => {
 
 app.patch("/users/:userId", async (req, res) => {
   const { userId } = req.params
-  const { email, username, address } = req.body
+  const { address } = req.body
+
+  // const user = await User.findById(userId)
+
+  // user.address.city = address.city
+  // user.address.street = address.street
+
+  // const updatedUser = await user.save()
+
+  const updatedUser = await User.findByIdAndUpdate(userId, {
+    "address.city": address.city,
+    "address.street": address.street
+  })
+
+  res.json(updatedUser)
 })
 
 app.get("/posts", async (req, res) => {
@@ -106,23 +135,56 @@ app.post("/posts/:postId/comments", async (req, res) => {
   const { commenter, text } = req.body
 
   const post = await Post.findById(postId)
+
+  post.comments.push({
+    commenter,
+    text
+  })
+
+  const updatedPost = await post.save()
+  res.json(updatedPost)
 })
 
 app.put("/posts/:postId/comments/:commentId", async (req, res) => {
   const { postId, commentId } = req.params
   const { commenter, text } = req.body
 
-  const post = await Post.findById(postId)
+  // const post = await Post.findById(postId)
+  // const comment = post.comments.id(commentId)
+
+  // comment.commenter = commenter
+  // comment.text = text
+
+  const updatedPost = await Post.findOneAndUpdate(
+    { _id: postId, "comments._id": commentId },
+    { "comments.$.text": text, "comments.$.commenter": commenter },
+    { new: true }
+  )
+
+  // const updatedPost = await post.save()
+  res.json(updatedPost.comments.id(commentId))
 })
 
 app.delete("/posts/:postId/comments/:commentId", async (req, res) => {
   const { postId, commentId } = req.params
 
-  const post = await Post.findById(postId)
+  // const post = await Post.findById(postId)
+  // post.comments.id(commentId).deleteOne()
+
+  // const updatedPost = await post.save()
+
+  const updatedPost = await Post.findOneAndUpdate(
+    { _id: postId },
+    { $pull: { comments: { _id: commentId } } },
+    { new: true }
+  )
+
+  // 204
+  res.json(updatedPost.comments)
 })
 
 app.get("/books", async (req, res) => {
-  const books = await Book.find()
+  const books = await Book.find().populate("publisher")
   res.json(books)
 })
 
@@ -133,16 +195,19 @@ app.get("/publishers", async (req, res) => {
 
 app.post("/books", async (req, res) => {
   const { title, author, publisherId } = req.body
+
+  const newBook = await Book.create({
+    title,
+    author,
+    publisher: publisherId
+  })
+
+  res.json(newBook)
 })
 
 app.get("/books/:id", async (req, res) => {
-  const book = await Book.findById(req.params.id)
+  const book = await Book.findById(req.params.id).populate("publisher")
   res.json(book)
-})
-
-app.use((err, req, res, _) => {
-  console.log(err.stack)
-  res.status(500).json({ message: "Something went wrong", error: err.message })
 })
 
 app.listen(3000, async () => {
