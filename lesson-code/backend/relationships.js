@@ -1,6 +1,5 @@
 import express from "express"
 import mongoose from "mongoose"
-import asyncHandler from "express-async-handler"
 
 // EMBEDDING: ONE-TO-ONE
 
