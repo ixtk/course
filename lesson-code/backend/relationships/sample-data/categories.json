@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "6602ad6b16c9bdd7664096b5"
+  },
+  "name": "electronics"
+},
+{
+  "_id": {
+    "$oid": "6602ad6b16c9bdd7664096b6"
+  },
+  "name": "home"
+},
+{
+  "_id": {
+    "$oid": "6602ad6b16c9bdd7664096b7"
+  },
+  "name": "utility"
+},
+{
+  "_id": {
+    "$oid": "6602ad6b16c9bdd7664096b8"
+  },
+  "name": "books"
+}]

@@ -1,0 +1,138 @@
+[
+  {
+    "_id": {
+      "$oid": "6602ae4516c9bdd7664096bd"
+    },
+    "name": "Configurable mobile secured line",
+    "price": 293,
+    "categories": [
+      {
+        "$oid": "6602ad6b16c9bdd7664096b8"
+      },
+      {
+        "$oid": "6602ad6b16c9bdd7664096b9"
+      }
+    ],
+    "__v": 7
+  },
+  {
+    "_id": {
+      "$oid": "6602ae4516c9bdd7664096be"
+    },
+    "name": "Balanced motivating middleware",
+    "price": 303,
+    "categories": [
+      {
+        "$oid": "6602ad6b16c9bdd7664096b7"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6602ae4516c9bdd7664096bf"
+    },
+    "name": "Configurable actuating knowledge user",
+    "price": 902,
+    "categories": [
+      {
+        "$oid": "6602ad6b16c9bdd7664096b5"
+      },
+      {
+        "$oid": "6602ad6b16c9bdd7664096b7"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6602ae4516c9bdd7664096c0"
+    },
+    "name": "Multi-channeled web-enabled data-warehouse",
+    "price": 448,
+    "categories": [
+      {
+        "$oid": "6602ad6b16c9bdd7664096b7"
+      },
+      {
+        "$oid": "6602ad6b16c9bdd7664096b8"
+      },
+      {
+        "$oid": "6602ad6b16c9bdd7664096b5"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6602ae4516c9bdd7664096c1"
+    },
+    "name": "Secured regional infrastructure",
+    "price": 169,
+    "categories": [
+      {
+        "$oid": "6602ad6b16c9bdd7664096b5"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6602ae4516c9bdd7664096c2"
+    },
+    "name": "Progressive impactful knowledge user",
+    "price": 192,
+    "categories": [
+      {
+        "$oid": "6602ad6b16c9bdd7664096b7"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6602ae4516c9bdd7664096c3"
+    },
+    "name": "Compatible cohesive hub",
+    "price": 700,
+    "categories": [
+      {
+        "$oid": "6602ad6b16c9bdd7664096b5"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6602ae4516c9bdd7664096c4"
+    },
+    "name": "Grass-roots maximized service-desk",
+    "price": 960,
+    "categories": [
+      {
+        "$oid": "6608199aa6b01045c6ae93d6"
+      },
+      {
+        "$oid": "6602ad6b16c9bdd7664096b8"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6602ae4516c9bdd7664096c5"
+    },
+    "name": "Synergized well-modulated model",
+    "price": 895,
+    "categories": [
+      {
+        "$oid": "6602ad6b16c9bdd7664096b5"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6602ae4516c9bdd7664096c6"
+    },
+    "name": "Open-source reciprocal focus group",
+    "price": 502,
+    "categories": [
+      {
+        "$oid": "6602ad6b16c9bdd7664096b7"
+      }
+    ]
+  }
+]

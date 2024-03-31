@@ -1,8 +1,18 @@
 import express from "express"
 import mongoose from "mongoose"
-import { Employee } from "./Employee.js"
 import fs from "fs"
 import cors from "cors"
+
+const employeeSchema = new mongoose.Schema(
+  {
+    name: String,
+    age: Number,
+    branch: String
+  },
+  { timestamps: true }
+)
+
+export const Employee = mongoose.model("Employee", employeeSchema)
 
 const app = express()
 
@@ -14,17 +24,19 @@ app.use(
 
 app.use(express.json())
 
+// example logging middleware
 app.use((req, res, next) => {
-  const logEntry = `${req.protocol} ${req.method} ${req.ip} ${
-    req.path
-  } ${req.get("user-agent")} ${new Date()}\n`
+  console.log(req.protocol, req.method, req.ip, req.path, new Date())
 
-  // console.log(req.protocol, req.method, req.ip, req.path, new Date())
-  fs.appendFile("./logs.txt", logEntry, (error) => {
-    if (error) {
-      console.log("Error saving to the log file")
-    }
-  })
+  // const logEntry = `${req.protocol} ${req.method} ${req.ip} ${
+  //   req.path
+  // } ${req.get("user-agent")} ${new Date()}\n`
+
+  // fs.appendFile("./logs.txt", logEntry, (error) => {
+  //   if (error) {
+  //     console.log("Error saving to the log file")
+  //   }
+  // })
 
   next()
 })
@@ -105,7 +117,7 @@ app.listen(3000, async () => {
   console.log("Server running on port 3000")
 
   try {
-    // /demo იქნება ბაზის სახელი
+    // demo იქნება ბაზის სახელი
     await mongoose.connect("mongodb://127.0.0.1:27017/demo")
     console.log("Connected to the database")
   } catch (error) {
