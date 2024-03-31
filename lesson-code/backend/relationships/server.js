@@ -123,6 +123,12 @@ app.get("/publishers", async (req, res) => {
   res.json(publishers)
 })
 
+app.delete("/publishers/:publisherId", async (req, res) => {
+  const publisherToDelete = await Publisher.findById(req.params.publisherId)
+  await publisherToDelete.deleteOne()
+  res.sendStatus(204)
+})
+
 app.post("/books", async (req, res) => {
   const { title, author, publisherId } = req.body
 
@@ -141,15 +147,23 @@ app.get("/books/:id", async (req, res) => {
 })
 
 app.get("/products", async (req, res) => {
-  // todo
-  const products = null
+  const { categories } = req.query
+
+  if (categories) {
+    const products = await Product.find({
+      categories: { $all: categories.split(",") }
+    })
+
+    return res.json(products)
+  }
+
+  const products = await Product.find().populate("categories")
 
   res.json(products)
 })
 
 app.get("/products/:productId", async (req, res) => {
-  // todo
-  const product = null
+  const product = await Product.findById(req.params.productId)
   res.json(product)
 })
 
@@ -162,8 +176,18 @@ app.patch("/products/:productId/categories", async (req, res) => {
   const { productId } = req.params
   const { categoryIds } = req.body
 
-  // todo
-  const product = null
+  // const product = await Product.findById(productId)
+  // product.categories.addToSet(...categoryIds)
+
+  // await product.save()
+
+  const product = await Product.findOneAndUpdate(
+    { _id: productId },
+    {
+      $addToSet: { categories: categoryIds }
+    },
+    { new: true }
+  )
 
   res.json(product)
 })
@@ -172,8 +196,10 @@ app.delete("/products/:productId/categories", async (req, res) => {
   const { productId } = req.params
   const { categoryIds } = req.body
 
-  // todo
-  const product = null
+  const product = await Product.findById(productId)
+  product.categories.pull(...categoryIds)
+
+  await product.save()
 
   res.json(product)
 })

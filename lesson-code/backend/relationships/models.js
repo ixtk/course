@@ -52,8 +52,17 @@ const bookSchema = new Schema({
   }
 })
 
-export const Publisher = model("Publisher", publisherSchema)
+const options = { document: true, query: false }
+
 export const Book = model("Book", bookSchema)
+
+// hook-ები მოდელის შექმნამდე უნდა დაწეროთ
+publisherSchema.pre("deleteOne", options, async function () {
+  console.log("In the deleteOne pre hook", this)
+  await Book.deleteMany({ publisher: this._id })
+})
+
+export const Publisher = model("Publisher", publisherSchema)
 
 // REFERENCING: MANY-TO-MANY
 
