@@ -8,7 +8,11 @@ import ReactDOM from "react-dom/client"
 // import { SecondsCountdown } from "./14-seconds-countdown/SecondsCountdown"
 // import { Wiki } from "./15-wiki/Wiki"
 // import { WikiRefactor } from "./16-wiki-refactor/WikiRefactor"
-import { ProtectedText } from "./18-protected-text/ProtectedText"
+// import { ProtectedText } from "./18-protected-text/ProtectedText"
+// import JobListingsCondRender from "./04-job-listings-cond-render/JobListingsCondRender"
+// import MovieForum from "./05-movie-forum/App"
+// import FlightsTable from "./06-flights-table/App"
+import OneWayChat from "./08-one-way-chat/App"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -20,6 +24,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     {/* <SecondsCountdownApp /> */}
     {/* <WikiApp /> */}
     {/* <WikiRefactorApp /> */}
-    <ProtectedText />
+    {/* <ProtectedText /> */}
+    {/* <JobListingsCondRender /> */}
+    {/* <MovieForum /> */}
+    {/* <FlightsTable /> */}
+    <OneWayChat />
   </React.StrictMode>
 )

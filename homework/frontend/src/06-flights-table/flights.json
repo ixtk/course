@@ -1,0 +1,23 @@
+[
+  {
+    "source": "London",
+    "destination": "New York",
+    "duration": 220,
+    "passengerCount": 45,
+    "flightCapacity": 50
+  },
+  {
+    "source": "New York",
+    "destination": "Paris",
+    "duration": 410,
+    "passengerCount": 60,
+    "flightCapacity": 60
+  },
+  {
+    "source": "Lima",
+    "destination": "New York",
+    "duration": 455,
+    "passengerCount": 38,
+    "flightCapacity": 50
+  }
+]

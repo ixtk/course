@@ -1,0 +1,22 @@
+[
+  {
+    "image": "https://s3.amazonaws.com/thumbnails.thecrimson.com/photos/2020/10/26/232756_1346454.jpg.1500x999_q95_crop-smart_upscale.jpg",
+    "title": "Inception - amazing movie with complex plot!",
+    "spoiler": false
+  },
+  {
+    "image": "https://variety.com/wp-content/uploads/2018/04/avengers-infinity-war-19.jpg?w=1000",
+    "title": "Let's talk about the ending of Avengers: Infinity war!",
+    "spoiler": true
+  },
+  {
+    "image": "https://www.pluggedin.com/wp-content/uploads/2019/12/Star-Wars-Force-Awakens-large-1200x688.jpg",
+    "title": "Star Wars - Great to see the new generation of heroes!",
+    "spoiler": false
+  },
+  {
+    "image": "https://sarahjmwalker.files.wordpress.com/2014/12/interstellar-2014-poster-wallpaper.jpg",
+    "title": "The Outcome of Cooper's Journey in Interstellar",
+    "spoiler": true
+  }
+]
